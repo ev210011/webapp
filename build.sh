@@ -1,4 +1,4 @@
-#!/bin/sh bash
+#!/bin/sh
 # exit on error
 set -o errexit
 
