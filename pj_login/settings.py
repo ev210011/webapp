@@ -87,7 +87,11 @@ WSGI_APPLICATION = "pj_login.wsgi.application"
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATEBASES = {
-    "default":config("DATABASE_URL", default=default_dburl, cast=dburl),
+    #"default":config("DATABASE_URL", default=default_dburl, cast=dburl),
+    'default':{
+        'ENGINE':'django/db/backends/sqlite3',
+        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
