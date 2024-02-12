@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-eg%o(d2&#%#jy!p$%yostwsxq^6j(*tcr!4fn4vg%@3rwve%s9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -87,7 +87,7 @@ WSGI_APPLICATION = "pj_login.wsgi.application"
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATEBASES = {
-    "default":config("DATABASE_URL", defualt=default_dburl, cast=dburl)
+    "default":config("DATABASE_URL", default=default_dburl, cast=dburl)
 }
 
 
