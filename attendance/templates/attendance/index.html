@@ -1,0 +1,24 @@
+{% extends 'attendance/base.html' %}
+{% block login %}
+
+    {% if user.is_authenticated %}
+        <div class="container">
+            <form method="post" action="{% url 'attendance:result' %}">
+            {% csrf_token %}
+                <h2>{{  user  }} さん</h2>
+                <h2 id="time"></h2>
+                <p>出勤か退勤か選んで提出してください。</p>
+                    <script>
+                    time();
+                    function time(){
+                        var now = new Date();
+                        document.getElementById("time").innerHTML = now.toLocaleString();
+                    }
+                    setInterval('time()',1000);
+                    </script>
+                <p>出勤（IN）／退勤（OUT）：<input type="hidden" name="in_out">{{ form.in_out }}</p>
+                <p><input type="submit" value="提出"></p>
+            </form>
+        </div>
+    {% endif %}
+{% endblock  %}
