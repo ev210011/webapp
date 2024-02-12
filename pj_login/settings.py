@@ -88,8 +88,8 @@ default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATEBASES = {
     "default":{
-        config("DATABASE_URL", default=default_dburl, cast=dburl),
         'ENGINE':'django.db.backends.dj_database_url',
+        config("DATABASE_URL", default=default_dburl, cast=dburl),
     }
 }
 
