@@ -89,7 +89,7 @@ WSGI_APPLICATION = "pj_login.wsgi.application"
 DATEBASES = {
     #"default":config("DATABASE_URL", default=default_dburl, cast=dburl),
     'default':{
-        'ENGINE':'django.db.backends.django_renser_db',
+        'ENGINE':'django.db.backends.django_render_db',
         'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
