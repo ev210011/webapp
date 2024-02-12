@@ -90,7 +90,7 @@ DATEBASES = {
     #"default":config("DATABASE_URL", default=default_dburl, cast=dburl),
     'default':{
         'ENGINE':'django.db.backends.django_renser_db',
-        'NAME':default_dburl,
+        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
