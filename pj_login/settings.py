@@ -87,7 +87,10 @@ WSGI_APPLICATION = "pj_login.wsgi.application"
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATEBASES = {
-    "default":config("DATABASE_URL", default=default_dburl, cast=dburl),
+    "default":{
+        config("DATABASE_URL", default=default_dburl, cast=dburl),
+        'ENGINE':dj_database_url,
+    }
 }
 
 
