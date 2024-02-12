@@ -84,7 +84,7 @@ WSGI_APPLICATION = "pj_login.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+#default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
 DATEBASES = {
     "default":{
