@@ -24,9 +24,9 @@ class IndexView(generic.ListView):
         if workplace:
             queryset = queryset.filter(workplace=workplace)
 
-        number = form.cleaned_data['number']
-        if number:
-            queryset = queryset.filter(number=number)
+        id = form.cleaned_data['id']
+        if id:
+            queryset = queryset.filter(id=id)
        
         full_name = form.cleaned_data['full_name']
         if full_name:
