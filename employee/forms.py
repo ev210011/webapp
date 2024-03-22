@@ -7,8 +7,8 @@ class SearchForm(forms.Form):
     full_name = forms.ModelChoiceField(
         queryset = Employee.objects, label='氏名', required=False)
        
-    number = forms.ModelChoiceField(
-        queryset = Number.objects, label='従業員番号', required=False)
+    id = forms.ModelChoiceField(
+        queryset = Employee.objects, label='従業員番号', required=False)
 
     workplace = forms.ModelChoiceField(
         queryset = Workplace.objects, label='勤務地', required=False)
