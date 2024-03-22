@@ -31,8 +31,8 @@ class Employee(models.Model):
     number = models.OneToOneField(
         Number, verbose_name='従業員番号', on_delete=models.PROTECT, blank=True, null=True,
     )
-    '''
     account = models.CharField('アカウント名', max_length=20, blank=True, null=True)
+    '''
     workplace = models.ForeignKey(
         Workplace, verbose_name='勤務地', on_delete=models.PROTECT, blank=True, null=True,
     )
