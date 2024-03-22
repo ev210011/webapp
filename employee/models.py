@@ -11,13 +11,15 @@ class Workplace(models.Model):
 
     def __str__(self):
         return self.name
+        
 
-
+'''
 class Number(models.Model):
     number = models.PositiveIntegerField('従業員番号', default=1, validators=[MaxValueValidator(10), MinValueValidator(1)])
     
     def __str__(self):
         return str(self.number)
+'''
 
 
 class Employee(models.Model):
@@ -25,9 +27,11 @@ class Employee(models.Model):
     first_name = models.CharField('名',max_length=20)
     full_name = Concat('last_name', 'first_name')
     email = models.EmailField('メールアドレス',blank=True)
+    '''
     number = models.OneToOneField(
         Number, verbose_name='従業員番号', on_delete=models.PROTECT, blank=True, null=True,
     )
+    '''
     account = models.CharField('アカウント名', max_length=20, blank=True, null=True)
     workplace = models.ForeignKey(
         Workplace, verbose_name='勤務地', on_delete=models.PROTECT, blank=True, null=True,
